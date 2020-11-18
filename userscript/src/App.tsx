@@ -1,22 +1,12 @@
 import React from 'react';
+import * as ml5  from 'ml5';
 import './App.css';
 
 function App() {
+  console.log(ml5)
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save. Then, refresh the page.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
     </div>
   );
 }
