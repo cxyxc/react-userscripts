@@ -4,7 +4,7 @@
  * @export
  * @param {*} args
  */
-export function log(...args) {
+export function log(...args: any) {
     console.log("Userscript (React Mode):", ...args);
 }
 
@@ -15,8 +15,8 @@ export function log(...args) {
  * @param {string} arg
  * @returns {Promise} - the `fetch` promise
  */
-export function logFetch(arg) {
-    const url = new URL(arg, window.location);
+export function logFetch(arg: any) {
+    const url = new URL(arg, window.location as any);
     log("fetching", "" + url);
     return fetch("" + url, { credentials: "include" });
 }
@@ -29,7 +29,7 @@ export function logFetch(arg) {
  * @param {function} callback - function to be called when URL changes
  * @returns {MutationObserver} - MutationObserver that watches the URL
  */
-export function addLocationChangeCallback(callback) {
+export function addLocationChangeCallback(callback: any) {
     // Run the callback once right at the start
     window.setTimeout(callback, 0);
 
@@ -43,7 +43,7 @@ export function addLocationChangeCallback(callback) {
         }
     });
 
-    observer.observe(body, { childList: true, subtree: true });
+    observer.observe(body as any, { childList: true, subtree: true });
     return observer;
 }
 
