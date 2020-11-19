@@ -52,10 +52,10 @@ function App() {
 
   useEffect(() => {
     window.addEventListener('mouseover', mouseOverListener)
-    window.addEventListener('mouseout', mouseOverListener)
+    // window.addEventListener('mouseout', mouseOverListener)
     return () => {
       window.removeEventListener('mouseover', mouseOverListener)
-      window.removeEventListener('mouseout', mouseOverListener)
+      // window.removeEventListener('mouseout', mouseOverListener)
     }
   }, [])
 
