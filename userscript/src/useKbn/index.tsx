@@ -21,7 +21,7 @@ export const useKbn = (
 
   useEffect(() => {
     loadlive2d('use-kbn-canvas', model);
-  }, []);
+  }, [model]);
 
   const computedRootStyles = Object.assign({}, rootStyles)
   const computedMessageStyles = Object.assign({}, messageStyles)

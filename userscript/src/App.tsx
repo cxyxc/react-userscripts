@@ -1,7 +1,8 @@
-import React, {useCallback, useEffect, useRef} from 'react';
+import React from 'react';
+import {useKbn} from './useKbn';
+import {useMouseHover} from './useMouseHover';
 import * as ml5  from 'ml5';
 import './App.css';
-import {useKbn} from './useKbn';
 
 // live2d 模型地址
 const live2dUrl = 'https://unpkg.com/live2d-widget-model-shizuku@1.0.5/assets/shizuku.model.json'
@@ -18,14 +19,10 @@ interface imageResult {
 function App() {
   // 加载 live2d 模型
   const { element, say } = useKbn(live2dUrl);
-
-  // 鼠标移入移出事件监听
-  const nodeMouseOverId = useRef()
-  const nodeMouseOverTimer = useRef()
-
-  const mouseOverListener = useCallback(
-    (e: any) => {
-      const node = e.target
+  
+  // 鼠标事件监听
+  useMouseHover({
+    callback: (node: any) => {
       if(node?.nodeName === "IMG") {
         // 发现图片元素
         node.crossOrigin = "*" // 设置跨域许可
@@ -46,19 +43,9 @@ function App() {
           }
         );
       }
-    },
-    [],
-  )
-
-  useEffect(() => {
-    window.addEventListener('mouseover', mouseOverListener)
-    // window.addEventListener('mouseout', mouseOverListener)
-    return () => {
-      window.removeEventListener('mouseover', mouseOverListener)
-      // window.removeEventListener('mouseout', mouseOverListener)
     }
-  }, [])
-
+  })
+  
   return (
     <div className="App">
       {element}
