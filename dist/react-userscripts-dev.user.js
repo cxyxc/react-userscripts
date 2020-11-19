@@ -2,7 +2,7 @@
 // @name     React Userscripts dev
 // @version  1.1
 // @description Development mode for React Userscripts.
-// @include https://*baidu.com/*
+// @include https://image.baidu.com/*
 // @grant    none
 // ==/UserScript==
 
