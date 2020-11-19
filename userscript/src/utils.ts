@@ -34,10 +34,10 @@ export function addLocationChangeCallback(callback: any) {
     window.setTimeout(callback, 0);
 
     // Set up a `MutationObserver` to watch for changes in the URL
-    let oldHref = window.location.href;
-    const body = document.querySelector("body");
-    callback();
     // TODO: 暂时注释待研究
+    // let oldHref = window.location.href;
+    // const body = document.querySelector("body");
+    // callback();
     // const observer = new MutationObserver(mutations => {
     //     if (mutations.some(() => oldHref !== document.location.href)) {
     //         oldHref = document.location.href;
