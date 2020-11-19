@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './lib/live2d.min.js';
+import '@cxyxc/live2d/dist/live2d.min.js';
 
 import styles from './styles';
 
